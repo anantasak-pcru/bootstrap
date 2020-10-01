@@ -1,3 +1,4 @@
+
 <?php
 include "conn.php";
 $id = $_GET['id'];
@@ -11,6 +12,34 @@ mysqli_close($link);
 echo $id;
 
 session_start();
-$_SESSION['alert_message'] = "Delete user success";
+$_SESSION['alert_message'] = "Delete location success";
+?>
 
-header("LOCATION: index.php");
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <?php
+    include "script.php";
+    ?>
+</head>
+<body>
+<script>
+    Swal.fire({
+        title: 'Delete Complete',
+        text: '😀',
+        icon: 'success',
+        showCancelButton: false,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Ok'
+    }).then(() => {
+            window.location = "index.php";
+    })
+</script>
+</body>
+</html>

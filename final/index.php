@@ -28,8 +28,13 @@ include "nav.php";
                 session_start();
                 if (isset($_SESSION['alert_message'])) {
                     $msg = $_SESSION['alert_message'];
-                    echo "<h1>$msg</h1>";
+                    echo '<div class="alert alert-success" role="alert" style="margin-top: 10px; margin-right: 10px;">' . $msg . '</div>';
                     unset($_SESSION['alert_message']);
+                }
+                if(isset($_SESSION['err_message'])) {
+                    $msg = $_SESSION['err_message'];
+                    echo '<div class="alert alert-danger" role="alert" style="margin-top: 10px; margin-right: 10px;">' . $msg . '</div>';
+                    unset($_SESSION['err_message']);
                 }
                 ?>
             </div>
@@ -69,12 +74,15 @@ include "nav.php";
                             ?>
                         </td>
                         <td align="center">
-                            <a class="btn btn-warning" href="#">
+
+                            <button class="btn btn-warning" href="#">
                                 <i class="fas fa-pen"></i> Edit
-                            </a>
-                            <a class="btn btn-danger" href="delete_location.php?id=<?php echo $row->id; ?>">
+                            </button>
+
+                            <button class="btn btn-danger" onclick="deleteLocation(<?php echo $row->id; ?>)">
                                 <i class="fas fa-trash-alt"></i> Delete
-                            </a>
+                            </button>
+
                         </td>
                     </tr>
 
@@ -96,6 +104,23 @@ include "nav.php";
     </tr>
     </tbody>
 </table>
+<script>
+    function deleteLocation(id) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You want to delete location",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location = "delete_location.php?id=" + id;
+            }
+        })
+    }
+</script>
 </body>
 </html>
 
