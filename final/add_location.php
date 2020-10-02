@@ -1,6 +1,6 @@
 <?php
+session_start();
 include "conn.php";
-
 $province_id = $_POST['province_id'];
 $location_name = $_POST['name'];
 $rating = $_POST['rating'];
@@ -13,8 +13,7 @@ mysqli_query($link, $sql);
 mysqli_close($link);
 
 if(!$rating) {
-    session_start();
-    $_SESSION['err_message'] = "Please select rating.";
+    $_SESSION['err_message'] = "🛑 Please select rating. 🛑";
 }
 
 ?>

@@ -6,8 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Index</title>
-
     <?php
+    session_start();
     include "script.php";
     ?>
 </head>
@@ -25,7 +25,6 @@ include "nav.php";
                     <i class="fas fa-plus-circle"></i> Add Location
                 </a>
                 <?php
-                session_start();
                 if (isset($_SESSION['alert_message'])) {
                     $msg = $_SESSION['alert_message'];
                     echo '<div class="alert alert-success" role="alert" style="margin-top: 10px; margin-right: 10px;">' . $msg . '</div>';

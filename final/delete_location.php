@@ -1,5 +1,6 @@
 
 <?php
+session_start();
 include "conn.php";
 $id = $_GET['id'];
 
@@ -11,8 +12,8 @@ mysqli_close($link);
 
 echo $id;
 
-session_start();
-$_SESSION['alert_message'] = "Delete location success";
+
+$_SESSION['alert_message'] = "🎉🎉 Delete location success.";
 ?>
 
 <!doctype html>

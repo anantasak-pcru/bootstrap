@@ -8,6 +8,7 @@
     <title>Index</title>
 
     <?php
+    session_start();
     include "script.php";
     ?>
 </head>
@@ -25,7 +26,6 @@ include "nav.php";
                     <i class="fas fa-plus-circle"></i> Add Location
                 </a>
                 <?php
-                session_start();
                 if (isset($_SESSION['alert_message'])) {
                     $msg = $_SESSION['alert_message'];
                     echo '<div class="alert alert-success" role="alert" style="margin: 10px">' . $msg . '</div>';

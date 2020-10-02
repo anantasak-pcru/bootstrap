@@ -22,3 +22,6 @@
 
    * ##### [download](https://datatables.net/download/)
    * ##### [example](https://datatables.net/examples/styling/bootstrap4.html)
+   
+## 5. [Google Font](https://fonts.google.com/)
+   * ##### [download](https://google-webfonts-helper.herokuapp.com/fonts)
