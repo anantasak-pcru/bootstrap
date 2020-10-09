@@ -11,7 +11,7 @@
     ?>
 </head>
 <body>
-<table class="table table-dark" align="center" border="2px" style="width: 100%; height: 100vh;">
+<table class="table table-dark" align="center" style="width: 100%; height: 100vh;">
     <tbody>
     <tr>
         <td align="center">
@@ -24,7 +24,7 @@
             </div>
             <form action="add_location.php" method="post" style="margin-top: 10px; margin-bottom: 10px;">
 
-                <table border="2px">
+                <table >
                     <tr>
                         <td>Location Name:</td>
                         <td><input type="text" name="name"></td>
