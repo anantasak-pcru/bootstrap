@@ -6,23 +6,20 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Add location</title>
+    <?php
+    include "script.php";
+    ?>
 </head>
 <body>
-<table align="center" border="2px" style="width: 100%; height: 150px">
+<table class="table table-dark" align="center" border="2px" style="width: 100%; height: 100vh;">
     <tbody>
-    <tr>
-        <td>
-            <div style="height: 150px; width: 100%;">
-                <img src="./public/image/header.jpg" alt="header image"
-                     style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-        </td>
-    </tr>
     <tr>
         <td align="center">
             <!--            Inner Table-->
             <div style="width: 80%; text-align: right; margin-top: 10px;">
-                <a href="index.php" >Back to Index</a>
+                <a class="btn btn-success" href="index.php" >
+                   <i class="fas fa-backspace"></i> Back to Index
+                </a>
                 <h1></h1>
             </div>
             <form action="add_location.php" method="post" style="margin-top: 10px; margin-bottom: 10px;">
